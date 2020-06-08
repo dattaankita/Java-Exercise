@@ -3,7 +3,7 @@ package com.javademo.linkedlist;
 
 public class CreateLinkedList {
 
-		Node head; 
+		static Node head; 
 		
 		static class Node { 
 			int data; 
@@ -24,6 +24,7 @@ public class CreateLinkedList {
 	            System.out.print(n.data + " "); 
 	            n = n.next; 
 	        } 
+	        System.out.println("\n");
 	    } 
 	    
 	    public void insertFront(int value) {
@@ -73,6 +74,22 @@ public class CreateLinkedList {
 	    	prev_node.next=prev_node.next.next;
 	    }
 	    
+	    Node reverse(Node node) 
+	    { 
+	        Node prev = null; 
+	        Node current = node; 
+	        Node next = null; 
+	        while (current != null) { 
+	            next = current.next; 
+	            current.next = prev; 
+	            prev = current; 
+	            current = next; 
+	        } 
+	        node = prev; 
+	        return node; 
+	    } 
+	  
+	    
 		/* method to create a simple linked list with 3 nodes*/
 		public static void main(String[] args) 
 		{ 
@@ -99,6 +116,9 @@ public class CreateLinkedList {
 			
 			llist.printList();
 			
+			head = llist.reverse(head);
+			
+			llist.printList();
 			
 		} 
 	} 
