@@ -7,3 +7,17 @@ create table users (
   num_points int,
   primary key (id)
 );
+
+
+
+CREATE TABLE `data` (
+`id` int(10) NOT NULL AUTO_INCREMENT,
+`username` varchar(20) NOT NULL,
+`password` varchar(10) NOT NULL,
+`name` varchar(50) DEFAULT NULL,
+`email` varchar(30) DEFAULT NULL,
+`country` varchar(20) DEFAULT NULL,
+`age` int(5) DEFAULT NULL,
+`sex` varchar(6) DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1
